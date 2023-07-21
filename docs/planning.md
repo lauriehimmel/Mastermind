@@ -5,25 +5,29 @@ Student name: Laurie Himmel
 ## Game Choice - Mastermind
 
 ## Screenshot for Wireframes
-[Wireframe screenshot](wireframe-2-01.jpg)
+[Wireframe screenshot](/wireframe-2-01.jpg)
 
 ## Pseudocode
 /*----- constants -----*/  
 losing is 20 pGuesses without match=cpuGuess  
-pGuess=cpuGuess is a win
-
+pGuess=cpuGuess is a win  
+const colorBtnEls = {  
+&nbsp;&nbsp;&nbsp;&nbsp;red:  
+&nbsp;&nbsp;&nbsp;&nbsp;orange:  
+&nbsp;&nbsp;&nbsp;&nbsp;yellow:  
+&nbsp;&nbsp;&nbsp;&nbsp;green:  
+&nbsp;&nbsp;&nbsp;&nbsp;blue:  
+&nbsp;&nbsp;&nbsp;&nbsp;purple:  
+}  
 
 /*----- state variables -----*/  
 let state;  
 let guessNumber; (20 guesses max - do I need this as a state variable?)  
+
   
 
 /*----- cached elements  -----*/
-colorBtnEl  
-colorBtnEl.red  
-colorBtnEl.orange  
-...  
-is there a way to do like... colorEl.[] so it can be dynamic?  
+colorBtnEls
   
 instructionBtnEl  
 guessBtnEl - this needs to have options to choose from  
@@ -33,10 +37,22 @@ playAgainBtnEl
 
 
 /*----- event listeners -----*/  
-colorEl  
+colorBtnEls click  
+submitBtnEl click  
+playAgainBtn click  
 
-/*----- functions -----*/
+/*----- functions -----*/   
+function handleBtnClick(e)   
+function render() {  
+&nbsp;&nbsp;&nbsp;&nbsp;renderScores()  
+&nbsp;&nbsp;&nbsp;&nbsp;renderSelections()  
+&nbsp;&nbsp;&nbsp;&nbsp;renderGameOver()  
+&nbsp;&nbsp;&nbsp;&nbsp;renderInstructions()  
+&nbsp;&nbsp;&nbsp;&nbsp;renderPegs() ? not sure about this one  
+};  
 
+init();  
+function resetUI();  (clear end game message)
 
 ## ~Brain Dump~
 computer chooses 4 colors from a possible 6 (randomize choice)
