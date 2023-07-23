@@ -1,18 +1,3 @@
-## Mastermind - Project 1 Planning
-
-Student name: Laurie Himmel
-
-## Game Choice - Mastermind
-A codebreaking game for two! As a frequently played game in my childhood, Mastermind was the obvious choice for me to build with my newly developed and continutally evolving JS skills.  
-  
-Invented in the 70s by Mordecai Meirowitz, Mastermind was initially based on a paper-based game called Bulls and Cows. Immensely popular in its first decade, the game would sell over 30 million copies before eventually fading away to its lesser known status.
-
-Though Mastermind is typically a two-player game, I will be making a one-player, one-computer version, where the player must guess the computer's randomly generated code. Will you find satisfaction in beating the bot? Or will your codebreaking attempts be thwarted?
-
-## Screenshot for Wireframes
-[Wireframe screenshot](/wireframe-2-01.jpg)
-
-## Pseudocode
 ### Constants
 - win: pGuess = cpuCode
 - lose: 20 guesses with no winning guess
@@ -84,5 +69,35 @@ Handle a player clicking the:
     - otherwise:
         - peg variable will be calculated and revealed
         - guess box will be cleared and ready for next guess
-- Play Again button
-    - resets the UI to init state
+    
+
+## ~Brain Dump~
+computer chooses 4 colors from a possible 6 (randomize choice)
+
+color options ex: 
+
+    RED | ORANGE | YELLOW | GREEN | BLUE | PURPLE
+
+player guesses: has a limited amount of guesses
+- if guess matches right away, that's a win!
+- if color is right but position is wrong: **black peg**
+- if color and position are right: **red peg**
+- if nothing is right: **white peg**
+
+ex: if code is:
+
+    RED | ORANGE | YELLOW | BLUE
+
+and player guesses
+
+    RED | GREEN | BLUE | PURPLE
+
+computer would return a red peg, a black peg, and two white pegs
+
+the guesses are in a rectangle, the pegs are in a block, so peg order doesn't matter
+
+visually:
+- board has a row for each guess and one for the code, but the code is hidden until the player guesses correctly or runs out of turns
+- each guess will fill in the row's shape with the color
+
+afweaw
