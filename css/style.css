@@ -253,7 +253,7 @@ h2 {
 }
 */
 
-.purple:active {
-    transform: translateY(2px);
+.purple:active .front {
+    transform: translateY(-2px);
 }
 

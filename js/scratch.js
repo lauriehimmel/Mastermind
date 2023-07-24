@@ -10,25 +10,26 @@ console.log('howdy!');
 // let cScore;
 
 // let pGuess;
-// let cGuess; // does this need a function??
-
+// formula for computer to generate their secret code
+// const INIT_STATE = {
+//   cCode = 
+// };
 // let winner;
 
-// newcolorspot.changeclass
-// changeclass function has return color
 
 /*----- cached elements  -----*/
 let colorBtnEls = document.querySelectorAll('.color-buttons > button');
-let guess1 = document.getElementById('guess1');
 let guessEls = document.querySelectorAll('#player-guess > section');
-console.log('guesses', guessEls)
+let submitBtn = document.querySelector('.submit')
+
+// let guessFull = []; --> trying to make an array that can be populated with the guess classes once they've all been clicked
+// console.log('guesses', guessEls)
 // let guesses = document.getElementById
 /*----- event listeners -----*/
 colorBtnEls.forEach(btn=>btn.addEventListener('click', handleBtnClick));
-
-
+console.log
 /*----- functions -----*/
-
+submitBtn.disabled = true;
 
   function handleBtnClick(e) { 
       // let frontEl = document.querySelector('.color-buttons > button > span');
@@ -64,16 +65,19 @@ colorBtnEls.forEach(btn=>btn.addEventListener('click', handleBtnClick));
       // guess1.style.background = e.target.background
       // console.log(guess1)
     let newClass = e.target.getAttribute('class');
-    console.log(newClass);
+    // console.log(newClass);
     // return(newClass);
     // guess1.className = newClass;
     // console.log(guess1);
     guessEls.forEach(section=>section.addEventListener('click', updateGuess))
-    function updateGuess(gNum) {
-      gNum.target.className = newClass;
-      console.log(gNum.target);
-   }
+    function updateGuess(guessChoice) {
+      guessChoice.target.className = newClass;
+      // if (guessChoice.class != null) {console.log(guessChoice) }
+      // TODO: need to figure out how to make 'submitBtn.disabled = false' happen when all 4 guess circles are filled 
+   };
+   
   };
+
 
 
 // function updateGuess(gNum) {
