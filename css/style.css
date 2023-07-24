@@ -86,6 +86,18 @@ h2 {
     grid-row: 1 / span 1; */
 }
 
+.player-guess {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+#guess1, #guess2, #guess3, #guess4 {
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
 
 .submit {
     grid-column: 3 / span 1;
@@ -96,18 +108,24 @@ h2 {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 10px;
 }
+
+
+
+
+
+
 
 .red {
     grid-column: 1 / span 1;
-    background: rgb(179, 15, 0);
+    background: red;
+    display: block;
     border-radius: 12px;
     border: none;
-    padding: 0;
-    cursor: pointer;
-    outline-offset: 4px;
+    padding: 12px 12px;
   }
-.red .front {
+/* .red .front {
     display: block;
     padding: 12px 12px;
     border-radius: 12px;
@@ -115,22 +133,21 @@ h2 {
     background: red;
     color: white;
     transform: translateY(-6px);
-  }
+  }*/
 
-.red:active .front {
-    transform: translateY(-2px);
-} 
+.red:active {
+    transform: translateY(2px);
+}
 
 .orange {
     grid-column: 2 / span 1;
-    background: rgb(195, 121, 2);
+    background: orange;
+    display: block;
     border-radius: 12px;
     border: none;
-    padding: 0;
-    cursor: pointer;
-    outline-offset: 4px;
+    padding: 12px 12px;
 }
-  
+/*   
 .orange .front {
     display: block;
     padding: 12px 12px;
@@ -139,23 +156,22 @@ h2 {
     background: orange;
     color: white;
     transform: translateY(-6px);
-}
+}*/
 
-.orange:active .front {
-    transform: translateY(-2px);
-} 
+.orange:active {
+    transform: translateY(2px);
+}
 
 .yellow {
     grid-column: 3 / span 1;
-    background: rgb(218, 174, 0);
+    background: rgb(255, 213, 0);
+    display: block;
     border-radius: 12px;
     border: none;
-    padding: 0;
-    cursor: pointer;
-    outline-offset: 4px;
+    padding: 12px 12px;
 }
   
-.yellow .front {
+/* .yellow .front {
     display: block;
     padding: 12px 12px;
     border-radius: 12px;
@@ -163,20 +179,19 @@ h2 {
     background: gold;
     color: white;
     transform: translateY(-6px);
-}
+}*/
 
-.yellow:active .front {
-    transform: translateY(-2px);
+.yellow:active {
+    transform: translateY(2px);
 }
 
 .green {
     grid-column: 4 / span 1;
-    background: rgb(0, 112, 0);
+    background: rgb(0, 173, 0);
+    display: block;
     border-radius: 12px;
     border: none;
-    padding: 0;
-    cursor: pointer;
-    outline-offset: 4px;
+    padding: 12px 12px;
 }
   
 .green .front {
@@ -189,21 +204,20 @@ h2 {
     transform: translateY(-6px);
 }
 
-.green:active .front {
-    transform: translateY(-2px);
+.green:active {
+    transform: translateY(2px);
 }
 
 .blue {
     grid-column: 5 / span 1;
-    background: rgb(7, 0, 196);
+    background: rgb(0, 89, 255);
+    display: block;
     border-radius: 12px;
     border: none;
-    padding: 0;
-    cursor: pointer;
-    outline-offset: 4px;
+    padding: 12px 12px;
 }
   
-.blue .front {
+/* .blue .front {
     display: block;
     padding: 12px 12px;
     border-radius: 12px;
@@ -211,23 +225,24 @@ h2 {
     background: rgb(0, 89, 255);
     color: white;
     transform: translateY(-6px);
+}*/
+
+.blue:active {
+    transform: translateY(2px);
 }
 
-.blue:active .front {
-    transform: translateY(-2px);
-}
 
 .purple {
     grid-column: 6 / span 1;
     background: rgb(91, 15, 162);
+    display: block;
     border-radius: 12px;
     border: none;
-    padding: 0;
-    cursor: pointer;
-    outline-offset: 4px;
+    padding: 12px 12px;
+    /* filter: drop-shadow(3px 3px 2px rgb(177, 101, 248)); */
 }
   
-.purple .front {
+/* .purple .front {
     display: block;
     padding: 12px 12px;
     border-radius: 12px;
@@ -236,15 +251,9 @@ h2 {
     color: white;
     transform: translateY(-6px);
 }
+*/
 
-.purple:active .front {
-    transform: translateY(-2px);
+.purple:active {
+    transform: translateY(2px);
 }
 
-.player-guess {
-    border: 2px solid black;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-}
