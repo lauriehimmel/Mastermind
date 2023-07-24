@@ -9,6 +9,100 @@
 <link rel="stylesheet" type="text/css" href="./css/style.css" />
 </head>
 <body>
-    
+    <section class="header">
+       <section class="heading-text">
+            <h1>MASTERMIND</h1>
+            <h2>Break the code, save the world!</h2>
+       </section>
+       <section class="scores">
+            <p class="pscore"> CODES CRACKED:</p>
+            <p class="cscore">ATTEMPTS THWARTED: </p>
+        </section>
+        
+    </section>
+    <section class="turns-left">
+        TURNS LEFT: - out of 20
+    </section>
+    <section class="instructions">
+        <button class="instruction-button">
+            INSTRUCTIONS
+        </button>
+        <section class="instruction-text">
+
+        </section>
+    </section>
+    <section class="main">
+        <section class="board-left">
+            board left
+        </section>
+        <section class="board-right">
+            board right
+        </section>
+        <button class="submit">
+            submit button
+        </button>
+        <section class="guess-box">
+            <section class="player-guess">
+                <section id="guess1"></section>
+                <section id="guess2"></section>
+                <section id="guess3"></section>
+                <section id="guess4"></section>
+            </section>
+            <section class="color-buttons">
+                <button class="red">
+                    <span class="front"></span>
+                </button>
+                <button class="orange">
+                    <span class="front"></span> 
+                </button>
+                <button class="yellow">
+                    <span class="front"></span>
+                </button>
+                <button class="green">
+                    <span class="front"></span>
+                </button>
+                <button class="blue">
+                    <span class="front"></span> 
+                </button>
+                <button class="purple">
+                    <span class="front"></span> 
+                </button>
+            </section>
+        </section>
+        <section class="cpuCode">
+            hidden cpu code
+        </section>
+        <button class="submit">
+            submit button
+        </button>
+    </section>
 </body>
 </html>
+
+
+ <!-- CURSOR CODE!!!
+    <html>
+<head>
+    <style>
+      #cursor{
+          font-size: 30px;
+      }
+    </style>
+</head>
+<body>
+    <span id="cursor">|</span>
+    <script>
+        var cursor = true;
+        var speed = 250;
+        setInterval(() => {
+          if(cursor) {
+            document.getElementById('cursor').style.opacity = 0;
+            cursor = false;
+          }else {
+            document.getElementById('cursor').style.opacity = 1;
+            cursor = true;
+          }
+        }, speed);
+    </script>
+</body>
+</html> -->

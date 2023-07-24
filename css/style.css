@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+    /* font-family: Arial, Helvetica, sans-serif;
+    background-color: black; */
+}
+
+.header {
+    color: black;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: repeat (2, 1fr);
+    margin: 1em 0 0 0;
+}
+
+.heading-text {
+    grid-column: 2 / span 2;
+    grid-row: 0 / span 1;
+    text-align: center;
+}
+
+h1 {
+    font-size: 7vh;
+    margin: 0;
+}
+
+h2 {
+    font-size: 3vh;
+    margin: 0;
+}
+
+.scores {
+    grid-column: 4 / span 1;
+    grid-row: 0 / span 1;
+    margin: 0;
+    text-align: right;
+}
+
+.turns-left {
+    text-align: center;
+    grid-column: 1 / span 4;
+}
+
+.instructions {
+    justify-content: center;
+    display: flex;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 25% 25% 25% 25%;
+    height: 50vh;
+}
+
+.board-left {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    background-color: blue;
+}
+
+.board-right {
+    grid-column-start: 4;
+    grid-column-end: end;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    background-color: blue;
+}
+
+.cpuCode {
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1;
+    background-color: purple
+}
+
+
+.guess-box {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+    text-align: center;
+}
+
+/* .player-guess {
+    grid-column: 0 / span 1;
+    grid-row: 1 / span 1;
+} */
+
+/* .color-buttons {
+    grid-column: 0 / span 6;
+    grid-row: 2 / span 1;
+} */
+
+.submit {
+    grid-column: 3 / span 1;
+    grid-row: 3 / span 1;
+}
+
+.color-buttons {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.red {
+    grid-column: 1 / span 1;
+    background: rgb(179, 15, 0);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+  }
+.red .front {
+    display: block;
+    padding: 12px 12px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: red;
+    color: white;
+    transform: translateY(-6px);
+  }
+
+.red:active .front {
+    transform: translateY(-2px);
+} 
+
+.orange {
+    grid-column: 2 / span 1;
+    background: rgb(195, 121, 2);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+  
+.orange .front {
+    display: block;
+    padding: 12px 12px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: orange;
+    color: white;
+    transform: translateY(-6px);
+}
+
+.orange:active .front {
+    transform: translateY(-2px);
+} 
+
+.yellow {
+    grid-column: 3 / span 1;
+    background: rgb(218, 174, 0);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+  
+.yellow .front {
+    display: block;
+    padding: 12px 12px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: gold;
+    color: white;
+    transform: translateY(-6px);
+}
+
+.yellow:active .front {
+    transform: translateY(-2px);
+}
+
+.green {
+    grid-column: 4 / span 1;
+    background: rgb(0, 112, 0);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+  
+.green .front {
+    display: block;
+    padding: 12px 12px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: rgb(0, 173, 0);
+    color: white;
+    transform: translateY(-6px);
+}
+
+.green:active .front {
+    transform: translateY(-2px);
+}
+
+.blue {
+    grid-column: 5 / span 1;
+    background: rgb(7, 0, 196);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+  
+.blue .front {
+    display: block;
+    padding: 12px 12px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: rgb(0, 89, 255);
+    color: white;
+    transform: translateY(-6px);
+}
+
+.blue:active .front {
+    transform: translateY(-2px);
+}
+
+.purple {
+    grid-column: 6 / span 1;
+    background: rgb(91, 15, 162);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+  
+.purple .front {
+    display: block;
+    padding: 12px 12px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: rgb(153, 57, 244);
+    color: white;
+    transform: translateY(-6px);
+}
+
+.purple:active .front {
+    transform: translateY(-2px);
+}
+
+.player-guess {
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+}
