@@ -1,17 +1,14 @@
 <!-- main header for entire game -->
-# browser-game-goes-here 
-testing ways to make changes
+# MasterMind 
+A codebreaking game for two! Will you find satisfaction in beating the bot? Or will your codebreaking attempts be thwarted?
 
 <!-- ☐ Screenshot(s): Images of your actual game. -->
 ## Gameplay - Screenshots
 
 <!-- ☐ Technologies Used: List of the technologies used, e.g., JavaScript, HTML, CSS... -->
 ## Technologies Used
-
- <!-- ex: -->
 - HTML
 - CSS
-- BULMA 
 - JS
 
 ## Key Resources
