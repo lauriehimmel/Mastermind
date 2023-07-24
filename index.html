@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./js/scratch.js"></script>
+    <script src="./js/scratch.js" defer></script>
     <!-- <script src="./js/main.js"></script> -->
-<link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
 </head>
 <body>
     <section class="header">
@@ -41,6 +41,7 @@
         <button class="submit">
             submit button
         </button>
+        <div class="shape orange" id="box">box</div>
         <section class="guess-box">
             <section class="player-guess">
                 <section id="guess1"></section>
@@ -50,22 +51,22 @@
             </section>
             <section class="color-buttons">
                 <button class="red">
-                    <span class="front"></span>
+                    <span class="front" id="red"></span>
                 </button>
                 <button class="orange">
-                    <span class="front"></span> 
+                    <span class="front" id="orange"></span> 
                 </button>
                 <button class="yellow">
-                    <span class="front"></span>
+                    <span class="front" id="yellow"></span>
                 </button>
                 <button class="green">
-                    <span class="front"></span>
+                    <span class="front" id="green"></span>
                 </button>
                 <button class="blue">
-                    <span class="front"></span> 
+                    <span class="front" id="blue"></span> 
                 </button>
                 <button class="purple">
-                    <span class="front"></span> 
+                    <span class="front" id="purple"></span> 
                 </button>
             </section>
         </section>
