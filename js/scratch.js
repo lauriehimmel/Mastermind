@@ -13,72 +13,90 @@ console.log('howdy!');
 // formula for computer to generate their secret code
 // const INIT_STATE = {
 //   cCode = 
-// };
-// let winner;
-
-
-/*----- cached elements  -----*/
+let cArray = [];
+let cNums = [1, 2, 3, 4, 5, 6]
 let colorBtnEls = document.querySelectorAll('.color-buttons > button');
+colorBtnEls.forEach((el)=>{cArray.push(el.getAttribute('class'))})
+let cCode = [];
+function cpuCode () {
+  cCode.push(cArray[Math.floor(Math.random() * 5)+1], cArray[Math.floor(Math.random() * 5)+1], cArray[Math.floor(Math.random() * 5)+1], cArray[Math.floor(Math.random() * 5)+1])
+}
+cpuCode()
+console.log(cCode)
+/*----- cached elements  -----*/
+
 let guessEls = document.querySelectorAll('#player-guess > section');
 let submitBtn = document.querySelector('.submit')
 
-// let guessFull = []; --> trying to make an array that can be populated with the guess classes once they've all been clicked
-// console.log('guesses', guessEls)
-// let guesses = document.getElementById
+
+
+let guess1 = document.getElementById('guess1')
+let guess2 = document.getElementById('guess2')
+let guess3 = document.getElementById('guess3')
+let guess4 = document.getElementById('guess4')
+
+let row1circle1 = document.querySelector('.row1 :nth-child(1)')
+let row1circle2 = document.querySelector('.row1 :nth-child(2)')
+let row1circle3 = document.querySelector('.row1 :nth-child(3)')
+let row1circle4 = document.querySelector('.row1 :nth-child(4)')
+
+
+let guessArray =[];
+
 /*----- event listeners -----*/
 colorBtnEls.forEach(btn=>btn.addEventListener('click', handleBtnClick));
-console.log
+// colorBtnEls.forEach(btn=>btn.addEventListener('click', handleBtnClick2));
 /*----- functions -----*/
 submitBtn.disabled = true;
 
-  function handleBtnClick(e) { 
-      // let frontEl = document.querySelector('.color-buttons > button > span');
-      // console.log('frontEl', frontEl);
-      // let frontClass = frontEl.getAttribute('class');
-      // console.log('frontClass', frontClass);
-      // let colorClass = e.target.getAttribute('id');
-      // console.log('colorClass', colorClass);
-      // let guessChild = document.querySelector('.color-buttons > button').children;
-      // console.log('guessChild', guessChild)
-      // let child = ;
-      // console.log(child);
-      // guess1.appendChild(child);
-      // guess1.className = colorClass;
-      // console.log('guess1', guess1);
-      // console.log('guess1', guess1);
-      // let classEl = document.querySelector('.color-buttons > button');
-      // console.log('classEl', classEl)
-      // let correctClass = e.target.getAttribute('id');
-      // console.log('correctClass', correctClass);  
-      // console.log('guess1', guess1);
-      // let child = document.querySelector('.color-buttons > button > span');
-      // let childClass = child.getAttribute('class');
-      // console.log('childClass', childClass);
-      // console.log('guess1', guess1);
-      // guess1.className = correctClass;
-      // console.log('guess1', guess1);
-      // let node = document.createElement('span');
-      // document.getElementById('guess1').appendChild(node);
-      // node.className = childClass;
-      // console.log(guess1);
-      // console.log(e.target.style.background);
-      // guess1.style.background = e.target.background
-      // console.log(guess1)
-    let newClass = e.target.getAttribute('class');
-    // console.log(newClass);
-    // return(newClass);
-    // guess1.className = newClass;
-    // console.log(guess1);
-    guessEls.forEach(section=>section.addEventListener('click', updateGuess))
-    function updateGuess(guessChoice) {
-      guessChoice.target.className = newClass;
-      // if (guessChoice.class != null) {console.log(guessChoice) }
-      // TODO: need to figure out how to make 'submitBtn.disabled = false' happen when all 4 guess circles are filled 
-   };
-   
+function handleBtnClick(e) { 
+
+  let newClass = e.target.getAttribute('class');;
+  guessEls.forEach(section=>section.addEventListener('click', updateGuess))
+  
+  function updateGuess(guessChoice) {
+  guessChoice.target.className = newClass;
+
+  if ((guess1.getAttribute('class').includes('fill')) && ((guess2.getAttribute('class').includes('fill'))) &&((guess3.getAttribute('class').includes('fill'))) &&((guess4.getAttribute('class').includes('fill'))))
+  {submitBtn.disabled = false;}
+
+  submitBtn.addEventListener('click', submitAnswer);
+  console.log('test')
+  function submitAnswer() {
+    let guessArray = [guess1.getAttribute('class'), guess2.getAttribute('class'), guess3.getAttribute('class'), guess4.getAttribute('class')];
+    row1circle1.className = guessArray[0];
+    row1circle2.className = guessArray[1];
+    row1circle3.className = guessArray[2];
+    row1circle4.className = guessArray[3];
+    submitBtn.disabled = true;
+
+
+    // console.log('cCode', cCode);
+    // console.log('guessArray', guessArray);
+    if ((cCode[1] === guessArray[1]) && (cCode[2] === guessArray[2]) && (cCode[3] === guessArray[3]) && (cCode[4] === guessArray[4])) {console.log('yay')}
   };
 
+        }
+    };
 
+
+
+
+
+
+// if (guessChoice.class != null) {console.log(guessChoice) }
+      // TODO: need to figure out how to make 'submitBtn.disabled = false' happen when all 4 guess circles are filled 
+  //  };
+   
+
+  //1. Grab all the circles
+//2. Iterate through each circle
+//3. On each iteration you want to check if the current circle has a color
+//3a. Pretend we are in an iteration:
+// console.log(circle.className)
+// if (circle.className.includes('red')) {
+//     console.log("Disable feature!")
+// }
 
 // function updateGuess(gNum) {
 
