@@ -18,6 +18,8 @@ Though Mastermind is typically a two-player game, I will be making a one-player,
 
 
 ## Getting Started
+<!-- ☐ Getting Started: In this section include the link to your deployed game and any instructions you deem important. -->
 
 
 ## Future Features
+<!-- ☐ Next Steps: Planned future enhancements (icebox items). -->
