@@ -27,8 +27,7 @@ cArray();
 
 // ******************
 // TO DO!!!!!! when you click the player guess circles before choosing a color, they disappear!!!
-// reset submit click count when player wins
-// reset guess row classes when player wins
+// CPU CODE CHANGES BEFORE BEING REVEALED - don't do until click play again
 // ******************
 
 /*----- state variables -----*/
@@ -55,7 +54,6 @@ turnsCount.innerText = 0;
 let crackedCount = document.getElementById('codesCracked');
 crackedCount.innerText = 0;
 
-
 let thwartedCount = document.getElementById('thwarted');
 thwartedCount.innerText = 0;
 
@@ -64,6 +62,37 @@ let colorButtonEls = document.querySelectorAll('.color-buttons button')
 let circleEls = document.querySelectorAll('.player-guesses .guess')
 
 let submitBtnEl = document.querySelector('.submit')
+
+let rowArray = [];
+
+let row1ArrayEls = document.querySelector('#row1').children;
+for (let i=0; i<4; i++) {
+  rowArray.push(row1ArrayEls[i]);
+};
+let row2ArrayEls = document.querySelector('#row2').children;
+for (let i=0; i<4; i++) {
+  rowArray.push(row2ArrayEls[i]);
+};
+let row3ArrayEls = document.querySelector('#row3').children;
+for (let i=0; i<4; i++) {
+  rowArray.push(row3ArrayEls[i]);
+};
+let row4ArrayEls = document.querySelector('#row4').children;
+for (let i=0; i<4; i++) {
+  rowArray.push(row4ArrayEls[i]);
+};
+let row5ArrayEls = document.querySelector('#row5').children;
+for (let i=0; i<4; i++) {
+  rowArray.push(row5ArrayEls[i]);
+};
+
+let codeReveal = document.querySelector('.cpuCode-box');
+
+// let playAgainPopup = document.querySelector('.playAgainPopup');
+// let popupText = document.querySelector('.popupText');
+
+
+// codeReveal.style.visibility = 'hidden';
 
 let guess1El = (document.getElementById('guess1'));
 let guess2El = (document.getElementById('guess2')); 
@@ -114,7 +143,7 @@ function submitGuess() {
     circle2.className = guess2El.className;
     circle3.className = guess3El.className;
     circle4.className = guess4El.className;
-    calculateWinner()
+    setTimeout(function(){calculateWinner()},10);
 }
 
 function calculateWinner(){
@@ -123,7 +152,29 @@ function calculateWinner(){
     guess2El.className = 'guess';
     guess3El.className = 'guess';
     guess4El.className = 'guess';
-    if (circle1.className === cGuess1.className && circle2.className=== cGuess2.className && circle3.className === cGuess3.className && circle4.className === cGuess4.className) {crackedCount.innerText++; alert('yay!')}
-    cArray();
+    if (count <= 2 && circle1.className === cGuess1.className && circle2.className === cGuess2.className && circle3.className === cGuess3.className && circle4.className === cGuess4.className) {
+      winnerNotice();
+    } else if (count >= 2) {
+      loserNotice();
+    };
+  };
+
+function winnerNotice() {
+  crackedCount.innerText++; 
+  alert('winnnnn'); 
+  cArray();
+  rowArray.forEach(function(row) {row.removeAttribute('class')})
+  codeReveal.style.visibility = 'visible';
 };
 
+function loserNotice() {
+  thwartedCount.innerText++; cArray(); count = 0; alert('sorry, you didn\'t crack it this time!');
+  rowArray.forEach(function(row) {row.removeAttribute('class')})
+  codeReveal.style.visibility = 'visible';
+  setTimeout(function(){appear()},10);
+}
+
+// function appear() {
+//   playAgainPopup.className = 'playAgainPopup-active';
+//   popupText.className = 'popupText-active';
+// }
