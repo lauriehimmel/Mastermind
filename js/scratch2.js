@@ -65,6 +65,6 @@ let circleClassArray = [];
 let guessButt = document.querySelectorAll('.player-guess > section')
 
 /*----- event listeners -----*/
-redButton.addEventListener('click', updateArray)
+// redButton.addEventListener('click', updateArray)
 
 /*----- functions -----*/
