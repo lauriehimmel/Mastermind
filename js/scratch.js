@@ -88,16 +88,18 @@ for (let i=0; i<4; i++) {
 
 let codeReveal = document.querySelector('.cpuCode-box');
 
-// let playAgainPopup = document.querySelector('.playAgainPopup');
-// let popupText = document.querySelector('.popupText');
-
-
-// codeReveal.style.visibility = 'hidden';
+let popup = document.querySelector('.hidden');
 
 let guess1El = (document.getElementById('guess1'));
 let guess2El = (document.getElementById('guess2')); 
 let guess3El = (document.getElementById('guess3'));
 let guess4El = (document.getElementById('guess4'));
+
+let yesPlayAgain = document.querySelector('.yesbutton');
+let noPlayAgain = document.querySelector('.nobutton');
+
+let goodbyeScreen = document.querySelector('.byehidden');
+console.log(goodbyeScreen.style.display)
 
 /*----- event listeners -----*/
 colorButtonEls.forEach((btn) => btn.addEventListener("click", handleBtnClick));
@@ -105,6 +107,9 @@ colorButtonEls.forEach((btn) => btn.addEventListener("click", handleBtnClick));
 circleEls.forEach((circ) => circ.addEventListener('click', setColor))
 
 submitBtnEl.addEventListener('click', submitGuess);
+
+yesPlayAgain.addEventListener('click', doPlayAgain);
+noPlayAgain.addEventListener('click', dontPlayAgain);
 
 /*----- functions -----*/
 disableSubmit()
@@ -165,16 +170,24 @@ function winnerNotice() {
   cArray();
   rowArray.forEach(function(row) {row.removeAttribute('class')})
   codeReveal.style.visibility = 'visible';
+  setTimeout(function(){playAgain()},5000);
 };
 
 function loserNotice() {
   thwartedCount.innerText++; cArray(); count = 0; alert('sorry, you didn\'t crack it this time!');
   rowArray.forEach(function(row) {row.removeAttribute('class')})
   codeReveal.style.visibility = 'visible';
-  setTimeout(function(){appear()},10);
-}
+  setTimeout(function(){playAgain()},500);
+};
 
-// function appear() {
-//   playAgainPopup.className = 'playAgainPopup-active';
-//   popupText.className = 'popupText-active';
-// }
+function playAgain() {
+  popup.style.display = 'flex';
+};
+
+function doPlayAgain() {
+
+};
+
+function dontPlayAgain() {
+  goodbyeScreen.style.display = 'flex';
+}
