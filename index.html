@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <script src="./js/scratch2.js" defer></script> -->
-    <script src="./js/scratch.js" defer></script>
-    <!-- <script src="./js/main.js" defer></script> -->
-    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <script src="js/scratch.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
     <section class="header">
@@ -16,13 +14,13 @@
             <h2>Break the code, save the world!</h2>
        </section>
        <section class="scores">
-            <p class="pscore"> CODES CRACKED:</p>
-            <p class="cscore">ATTEMPTS THWARTED: </p>
+            <p class="pscore"> CODES CRACKED: <span id="codesCracked"></span></p>
+            <p class="cscore">ATTEMPTS THWARTED: <span id="thwarted"></span></p>
         </section>
         
     </section>
     <section class="turns-left">
-        TURNS LEFT: - out of 20
+        GUESSES MADE: <span id="turnsCount"></span> out of 5
     </section>
     <section class="instructions">
         <button class="instruction-button">
@@ -32,196 +30,113 @@
 
         </section>
     </section>
-    <section class="main">
-        <section class="board-left">
-            <section class="left-rows">
-                <section class="row1">
+    <main>
+        <section class="board">
+            <section class="game-board">
+                <section class="row" id="row1">
                     <section id="circle"></section>
                     <section id="circle"></section>
                     <section id="circle"></section>
                     <section id="circle"></section>
                     <section id="pegs">
-                        <section class="peg1"></section>
-                        <section class="peg2"></section>
-                        <section class="peg3"></section>
-                        <section class="peg4"></section>
+                        <section class="peg"></section>
+                        <section class="peg"></section>
+                        <section class="peg"></section>
+                        <section class="peg"></section>
                     </section>
                 </section>
-                <section class="row2">
+                <section class="row" id="row2">
                     <section id="circle"></section>
                     <section id="circle"></section>
                     <section id="circle"></section>
                     <section id="circle"></section>
                     <section id="pegs">
-                        <section class="peg1"></section>
-                        <section class="peg2"></section>
-                        <section class="peg3"></section>
-                        <section class="peg4"></section>
+                        <section class="peg"></section>
+                        <section class="peg"></section>
+                        <section class="peg"></section>
+                        <section class="peg"></section>
                     </section>
                 </section>
-                <section class="row3">
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="pegs">
-                        <section class="peg1"></section>
-                        <section class="peg2"></section>
-                        <section class="peg3"></section>
-                        <section class="peg4"></section>
-                    </section>
+                <section class="row" id="row3">
+                        <section id="circle"></section>
+                        <section id="circle"></section>
+                        <section id="circle"></section>
+                        <section id="circle"></section>
+                        <section id="pegs">
+                            <section class="peg"></section>
+                            <section class="peg"></section>
+                            <section class="peg"></section>
+                            <section class="peg"></section>
+                        </section>
                 </section>
-                <section class="row4">
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="pegs">
-                        <section class="peg1"></section>
-                        <section class="peg2"></section>
-                        <section class="peg3"></section>
-                        <section class="peg4"></section>
-                    </section>
-
+                <section class="row" id="row4">
+                        <section id="circle"></section>
+                        <section id="circle"></section>
+                        <section id="circle"></section>
+                        <section id="circle"></section>
+                        <section id="pegs">
+                            <section class="peg"></section>
+                            <section class="peg"></section>
+                            <section class="peg"></section>
+                            <section class="peg"></section>
+                        </section>
                 </section>
-                <section class="row5">
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="pegs">
-                        <section class="peg1"></section>
-                        <section class="peg2"></section>
-                        <section class="peg3"></section>
-                        <section class="peg4"></section>
-                    </section>
-
+                <section class="row" id="row5">
+                        <section id="circle"></section>
+                        <section id="circle"></section>
+                        <section id="circle"></section>
+                        <section id="circle"></section>
+                        <section id="pegs">
+                            <section class="peg"></section>
+                            <section class="peg"></section>
+                            <section class="peg"></section>
+                            <section class="peg"></section>
+                        </section>
                 </section>
-                <section class="row6">
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="pegs">
-                        <section class="peg1"></section>
-                        <section class="peg2"></section>
-                        <section class="peg3"></section>
-                        <section class="peg4"></section>
-                    </section>
-                </section>
-                <section class="row7">
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="pegs">
-                        <section class="peg1"></section>
-                        <section class="peg2"></section>
-                        <section class="peg3"></section>
-                        <section class="peg4"></section>
-                    </section>
-                </section>
-                <section class="row8">
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="pegs">
-                        <section class="peg1"></section>
-                        <section class="peg2"></section>
-                        <section class="peg3"></section>
-                        <section class="peg4"></section>
-                    </section>
-                </section>
-                <section class="row9">
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="pegs">
-                        <section class="peg1"></section>
-                        <section class="peg2"></section>
-                        <section class="peg3"></section>
-                        <section class="peg4"></section>
-                    </section>
-                </section>
-                <section class="row10">
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="circle"></section>
-                    <section id="pegs">
-                        <section class="peg1"></section>
-                        <section class="peg2"></section>
-                        <section class="peg3"></section>
-                        <section class="peg4"></section>
-                    </section>
                 </section>
             </section>
         </section>
-        <section class="board-right">
-            board right
-        </section>
-        <section class="guess-box">
-            <section id ="player-guess" class="player-guess">
-                <section id="guess1" class=""></section>
-                <section id="guess2" class=""></section>
-                <section id="guess3" class=""></section>
-                <section id="guess4" class=""></section>
+        <section class="right-side">
+            <section class="cpuBox-bg">CRACK THE CODE TO REVEAL BELOW
+                <section class="cpuCode-box">
+                    <section id="circle"></section>
+                    <section id="circle"></section>
+                    <section id="circle"></section>
+                    <section id="circle"></section>
+                </section>
             </section>
-            <section class="color-buttons">
-                <button class="fill-red">
-                </button>
-                <button class="fill-orange"> 
-                </button>
-                <button class="fill-yellow">
-                    
-                </button>
-                <button class="fill-green">
-                    
-                </button>
-                <button class="fill-blue">
-                 
-                </button>
-                <button class="fill-purple">
-                    
-                </button>
+            <section class="guess-box">
+                <section class="player-guesses">
+                        <section class ="guess" id="guess1"></section>
+                        <section class ="guess" id="guess2"></section>
+                        <section class ="guess" id="guess3"></section>
+                        <section class ="guess" id="guess4"></section>
+                </section>
+                <section class="color-buttons">
+                    <button class="fill-red"  role="button">
+                        Red
+                    </button>
+                    <button class="fill-orange"  role="button"> 
+                        Orange
+                    </button>
+                    <button class="fill-yellow"  role="button">
+                        Yellow
+                    </button>
+                    <button class="fill-green"  role="button">
+                        Green
+                    </button>
+                    <button class="fill-blue"  role="button">
+                        Blue
+                    </button>
+                    <button class="fill-purple"  role="button">
+                        Purple
+                    </button>
+                </section>
             </section>
-        </section>
-        <section class="cpuCode">
-            hidden cpu code
-        </section>
-        <button class="submit"  disabled>
-            submit button
-        </button>
+            <button class="submit">
+                submit button
+            </button>
     </section>
+    </main>
 </body>
 </html>
-
-
- <!-- CURSOR CODE!!!
-    <html>
-<head>
-    <style>
-      #cursor{
-          font-size: 30px;
-      }
-    </style>
-</head>
-<body>
-    <span id="cursor">|</span>
-    <script>
-        var cursor = true;
-        var speed = 250;
-        setInterval(() => {
-          if(cursor) {
-            document.getElementById('cursor').style.opacity = 0;
-            cursor = false;
-          }else {
-            document.getElementById('cursor').style.opacity = 1;
-            cursor = true;
-          }
-        }, speed);
-    </script>
-</body>
-</html> -->
