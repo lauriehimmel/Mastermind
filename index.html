@@ -10,7 +10,7 @@
    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Orbit&family=Orbitron:wght@400;900&family=Rajdhani&family=Saira:wght@200&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Orbit&family=Orbitron:wght@400;900&family=Rajdhani&family=Saira:wght@200;800&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
     <section class="header">
@@ -18,23 +18,24 @@
             <h1>MASTERMIND</h1>
             <h2>Break the code, save the world!</h2>
        </section>
-       <!-- <section class="scores">
-            <p class="pscore"> CODES CRACKED: <span id="codesCracked"></span></p>
-            <p class="cscore">ATTEMPTS THWARTED: <span id="thwarted"></span></p>
-        </section> -->
         
     </section>
     <section class="turns-left">
         Attempts made: <span id="turnsCount"></span> out of 5
     </section>
-    <!-- <section class="instructions">
+    <section class="instructions">
         <button class="instruction-button">
             INSTRUCTIONS
         </button>
-        <section class="instruction-text">
-
+        <section class="instruction-text" id="hiddentext">
+            <p>
+                You thought you retired. You thought you were out of the game. The president of Seiland, Joshua B. Krabsmith, had other ideas. "There's a code!!!" he said. "There's a code those dogs from Uxuiville have released to the public, and it will reveal our <span class="boldtext">TOP-SECRET IMAGES</span> to the entire world. Save us! You're the only one who can - we need to guess the code in just 5 tries or else it will be released."
+            </p>
+            <p> 
+                The rules are simple. Select a color, and then select where you would like it to fall in the code. Only when you have a full guess (4 colors) filled out will you be able to <span class="boldtext">submit</span> your guess. If you crack the code, the system will alert you and your country's precious files will be saved. If you fail to crack the code...........
+            </p>
         </section>
-    </section> -->
+    </section>
     <main>
         <section class="board">
             <section class="game-board">
@@ -102,7 +103,7 @@
             </section>
         </section>
         <section class="right-side">
-            <section class="cpuBox-bg">CRACK THE CODE TO REVEAL BELOW
+            <section class="cpuBox-bg">YOU &nbsp;HAVE &nbsp;<span class="five">5</span> &nbsp;ATTEMPTS.
                 <section class="cpuCode-box">
                     <section id="circle"></section>
                     <section id="circle"></section>
@@ -135,15 +136,17 @@
     <section class="popup-container hidden">
         <section class="playAgainPopup">
             <span class="popupText">
-                <section class="playAgain">
-                    <span>Play again<span class="blink">?</span></span>
-                </section>
-                <section class="popup-btn-container">
-                    <button class="popup-button yesbutton">Yes</button>
-                    <button class="popup-button nobutton">No</button>
-                </section>
+                <span class="grats">CONGRATULATIONS!</span>
+                <span class="cracked-code">YOU CRACKED THE CODE AND SAVED THE WORLD.</span>
+                <span class="play-again">Play again<span class="blink">?</span></span>
+                <button class="popup-button yesbutton">Yes</button>
+                <button class="popup-button nobutton">No</button>
             </span>
         </section>
+    </section>
+    <section class="winner-message" id="winnerhidden">
+        <span class="grats">CONGRATULATIONS!</span>
+        <span class="udidit">YOU CRACKED THE CODE AND SAVED THE WORLD.</span> 
     </section>
     <section class="goodbye-container byehidden"><section>UNTIL WE MEET AGAIN..<span class="blink">.</span></section></section>
 </body>

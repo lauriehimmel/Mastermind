@@ -15,8 +15,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to bottom, #585858 0%, black 100%);
-    height: 100vh;
+    background-image: linear-gradient(to bottom, #858484 0%, black 100%);
+    height: 100%;
   }
   
 
@@ -68,10 +68,35 @@ h2 {
     font-size: 3vh;
     margin: 20px;
 }
-
 .instructions {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    text-align: center;
+    align-items: center;
     justify-content: center;
-    display: flex;
+}
+
+.instruction-button {
+    width: auto;
+    margin: auto;
+}
+.instruction-text, #instruction-text {
+    justify-content: center;
+    display: none;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    font-family: 'Saira', sans-serif;
+    background-color: black;
+    color: white;
+    width: 60%;
+    margin: auto;
+    padding: 10px 30px 10px 30px;
+    margin-top: 20px;
+}
+
+#hiddentext {
+    display: none;
 }
 
 main {
@@ -86,18 +111,21 @@ main {
 }
 
 .board {
-    background-color: rgb(0, 0, 0);
-    border: 20px solid rgb(0, 0, 0);
     display: grid;
     align-content: center;
     align-items: center;
+    width: 80%;
+    margin: auto;
+
 } 
 
 .game-board {
     
-    background-image: url('img/metal-bg.jpg');
+    /* background-image: url('img/metal-bg.jpg'); */
     background-color: black;
     align-content: space-evenly;
+    filter: drop-shadow(3px 3px 3px rgb(120, 120, 120));
+    padding: 40px 20px 40px 20px;
 } 
 
 .row {
@@ -114,6 +142,7 @@ main {
     width: 30px;
     height: 30px;
     justify-content: space-evenly;
+    margin: 7px;
 }
 
 #pegs {
@@ -144,7 +173,6 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* grid:  */
     visibility: hidden;
     background-color: black;
     position: relative;
@@ -162,6 +190,14 @@ main {
     align-items: center;
     text-align: center;
     margin-top: 20px;
+    font-family: 'Saira', sans-serif;
+    filter: drop-shadow(3px 3px 3px rgb(120, 120, 120));
+    
+}
+
+.five {
+    font-size: 1.5rem;
+
 }
 
 .fill-red {
@@ -172,6 +208,15 @@ main {
     margin-right: 10px;
     margin-top: 10px;
 }
+/* 
+.fill-red-clicked {
+    background-color: #ffdeda;
+    box-shadow: 0px -1px 2px 0 rgb(93, 0, 0) inset,
+    0px 1px 1px 1px rgb(75, 12, 12);
+    border: none;
+    margin-right: 10px;
+    margin-top: 10px;
+} */
 
 .fill-orange {
     background-color: rgb(255, 132, 0);
@@ -286,6 +331,7 @@ button:hover {
     border-radius: 50%;
     width: 30px;
     height: 30px;
+    margin: 7px;
 }
 
 .color-buttons {
@@ -306,6 +352,7 @@ button:hover {
     border-radius: 50%;
     width: 30px;
     height: 30px;
+    margin: 7px;
 }
 
 
@@ -315,6 +362,8 @@ button:hover {
     border-radius: 50%;
     width: 30px;
     height: 30px;
+    margin: 7px;
+    margin: 7px;
 }
 
 .fill-yellow-circle {
@@ -322,7 +371,8 @@ button:hover {
     border: 2px solid white;
     border-radius: 50%;
     width: 30px;
-    height: 30px;  
+    height: 30px;
+    margin: 7px;  
 }
 
 .fill-green-circle {
@@ -331,6 +381,7 @@ button:hover {
     border-radius: 50%;
     width: 30px;
     height: 30px;
+    margin: 7px;
 }
 
 .fill-blue-circle {
@@ -339,6 +390,7 @@ button:hover {
     border-radius: 50%;
     width: 30px;
     height: 30px;
+    margin: 7px;
 }
 
 .fill-purple-circle {
@@ -347,6 +399,7 @@ button:hover {
     border-radius: 50%;
     width: 30px;
     height: 30px;
+    margin: 7px;
 }
 
 /* .submit {
@@ -385,19 +438,36 @@ button:hover {
     align-items: center;
     text-align: center;
     top: 20%;
-    width: 40%;
-    height: 40%; 
+    height: auto;
+    width: 80%;
+    margin: auto;
     font-family: 'VT323', monospace; 
-    font-size: 10vh;
-    /* border-radius: 20px;
-    border: 1px solid #012880;
-	background-image: linear-gradient(-180deg, #040417 0%, #000000 100%);
-	box-shadow: 0 1rem 1.25rem 0 rgba(22,75,195,0.50),
-							0 -0.25rem 1.5rem rgba(110, 15, 155, 1) inset,
-							0 0.75rem 0.5rem rgba(255,255,255, 0.4) inset,
-							0 0.25rem 0.5rem 0 rgb(47, 42, 140) inset; */
+    padding: 20px;
+  }
+
+  .popupText {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto;
+    justify-content: center;
+  }
+
+  .grats, .play-again{
+    font-size: 15vh;
+    margin: 7px;
+  }
+
+  .cracked-code {
+    font-size: 4vh;
+    margin: 7px;
   }
   
+  .popup-button {
+    width: 20%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
   
 @keyframes fadeIn {
     to {
@@ -438,7 +508,7 @@ button:hover {
     font-size: 30vh;
   }
 
-  .byehidden {
+  .byehidden, #winnerhidden {
     display: none;
   }
 
@@ -446,22 +516,6 @@ button:hover {
     animation: blink .75s linear infinite;
     position: relative;
 }
-
-/*
-* 	BIG Jelly Button
-*		Original source from Mathias Adam:
-*				- https://dribbble.com/shots/6209185-BIG-Jelly-Button
-*
-*		I tried to stay as true to the original source as possible.
-*		Unforutunately there were a few effects I couldn't make 
-*		happen with CSS. Primarily the suble noise texture. I 
-*		considered using a base64 encoded noise pattern overlay but
-*		I felt like that was cheating. I also couldn't do the
-*		true bevel effect on the label since CSS doesn't have an
-*		inset text shadow option. 
-*/
-
-
 
 .submit {
 	position: relative;
@@ -505,7 +559,6 @@ button:hover {
 	width: calc(100% - 7.5rem);
 	background: #fff;
 	border-radius: 100%;
-	
 	opacity: 0.7;
 	background-image: linear-gradient(-270deg, #d0d0d0 0%, #d0d0d0 20%, #d0d0d0 80%, #d0d0d0 100%);
 }
@@ -527,3 +580,23 @@ button:hover {
 	background-image: linear-gradient(-270deg, rgba(255,255,255,0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255,255,255,0.00) 100%);
 }
 
+.boldtext {
+    font-weight: 800;
+}
+
+.winner-message {
+    position: absolute;
+    background-color: black;
+    color: white;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 20%;
+    width: 40%;
+    height: 40%; 
+    font-family: 'VT323', monospace; 
+    font-size: 10vh;
+  }
+  

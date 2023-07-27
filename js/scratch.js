@@ -100,20 +100,23 @@ let yesPlayAgain = document.querySelector('.yesbutton');
 let noPlayAgain = document.querySelector('.nobutton');
 
 let goodbyeScreen = document.querySelector('.byehidden');
-console.log(goodbyeScreen.style.display)
+
+let instrBtn = document.querySelector('.instruction-button');
+let instructionsEl = document.getElementById("hiddentext");
+
+let winnerMessageEl = document.getElementById('winnerhidden');
 
 /*----- event listeners -----*/
 colorButtonEls.forEach((btn) => btn.addEventListener("click", handleBtnClick));
-
-
-
 submitBtnEl.addEventListener('click', submitGuess);
-
 yesPlayAgain.addEventListener('click', doPlayAgain);
 noPlayAgain.addEventListener('click', dontPlayAgain);
+instrBtn.addEventListener('click', toggleInstructions)
 
 /*----- functions -----*/
 disableSubmit()
+instructionsEl.style.display = "none";
+
 function handleBtnClick(e) {
     targetClass = e.target.getAttribute('class')
     circleEls.forEach((circ) => circ.addEventListener('click', setColor))
@@ -167,11 +170,12 @@ function calculateWinner(){
 
 function winnerNotice() {
   // crackedCount.innerText++; 
-  alert('YOU CRACKED THE CODE AND SAVED THE WORLD! CONGRATULATIONS!'); 
+  // winnerMessageEl.style.display = "flex";
   cArray();
-  rowArray.forEach(function(row) {row.removeAttribute('class')})
+  // rowArray.forEach(function(row) {row.removeAttribute('class')})
+  setTimeout(function(){rowArray.forEach(function(row) {row.removeAttribute('class')})}, 500);
   codeReveal.style.visibility = 'visible';
-  setTimeout(function(){playAgain()},1000);
+  setTimeout(function(){playAgain()},500);
 };
 
 function loserNotice() {
@@ -201,3 +205,15 @@ function init() {
 function revealCode() {
   codeReveal.style.visibility = 'visible';
 };
+
+function toggleInstructions() {
+  if (instructionsEl.style.display === "none") {
+    instructionsEl.style.display = "grid";
+  } else {
+    instructionsEl.style.display = "none";
+  }
+}
+
+
+
+
