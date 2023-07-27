@@ -105,7 +105,7 @@ console.log(goodbyeScreen.style.display)
 /*----- event listeners -----*/
 colorButtonEls.forEach((btn) => btn.addEventListener("click", handleBtnClick));
 
-circleEls.forEach((circ) => circ.addEventListener('click', setColor))
+
 
 submitBtnEl.addEventListener('click', submitGuess);
 
@@ -116,11 +116,11 @@ noPlayAgain.addEventListener('click', dontPlayAgain);
 disableSubmit()
 function handleBtnClick(e) {
     targetClass = e.target.getAttribute('class')
+    circleEls.forEach((circ) => circ.addEventListener('click', setColor))
 }
 
 function setColor(circ) {
     circ.target.className = `${targetClass}-circle`;
-    // console.log(document.getElementById('guess1'))
     freeSubmit()
 }
 

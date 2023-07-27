@@ -145,7 +145,7 @@ main {
     flex-direction: row;
     justify-content: center;
     /* grid:  */
-    /* visibility: hidden; */
+    visibility: hidden;
     background-color: black;
     position: relative;
     padding: 10px;
