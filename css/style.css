@@ -41,7 +41,7 @@ h1 {
 }
 
 h2 {
-    font-size: 3vh;
+    font-size: 4vh;
     margin: 0;
     font-family: 'Orbitron', sans-serif; 
     font-weight: 400;
@@ -54,7 +54,7 @@ h2 {
     text-align: right;
     font-family: 'Orbitron', sans-serif; 
     font-weight: 400;
-    font-size: 2vh;
+    font-size: 3vh;
 }
 
 .turns-left {
@@ -62,7 +62,7 @@ h2 {
     grid-column: 1 / span 4;
     font-family: 'Orbitron', sans-serif; 
     font-weight: 400;
-    font-size: 2vh;
+    font-size: 3vh;
     margin: 2%;
 }
 
@@ -286,6 +286,7 @@ button:hover {
     outline: 0;
   }
   
+
 .cpuCode-box {
     display: flex;
     flex-direction: row;
@@ -313,7 +314,13 @@ button:hover {
     height: 40%; 
     font-family: 'VT323', monospace; 
     font-size: 10vh;
-    filter: drop-shadow(10px 10px 0.75rem black);
+    /* border-radius: 20px;
+    border: 1px solid #012880;
+	background-image: linear-gradient(-180deg, #040417 0%, #000000 100%);
+	box-shadow: 0 1rem 1.25rem 0 rgba(22,75,195,0.50),
+							0 -0.25rem 1.5rem rgba(110, 15, 155, 1) inset,
+							0 0.75rem 0.5rem rgba(255,255,255, 0.4) inset,
+							0 0.25rem 0.5rem 0 rgb(47, 42, 140) inset; */
   }
   
   
@@ -326,6 +333,7 @@ button:hover {
     }
   }
 
+
 @keyframes blink {
     0% { opacity: 1; }
     50% { opacity: 1; }
@@ -334,10 +342,10 @@ button:hover {
 }
 
 
-/* .hidden {
+.hidden {
     display: none;
     animation: fadeIn 1s;
-} */
+}
 
 .goodbye-container {
     position: absolute;
@@ -363,6 +371,3 @@ button:hover {
     animation: blink .75s linear infinite;
     position: relative;
 }
-
-
-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;

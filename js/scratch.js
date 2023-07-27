@@ -6,7 +6,7 @@ let colorArray = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
 let cGuess1;
 let cGuess2;
 let cGuess3;
-let cGuess4;
+let cGuess4;  
 
 function cArray() {let cArray =  [(colorArray[Math.floor(Math.random() * 5)+1]), (colorArray[Math.floor(Math.random() * 5)+1]), (colorArray[Math.floor(Math.random() * 5)+1]), (colorArray[Math.floor(Math.random() * 5)+1]), ];
 console.log(cArray);
@@ -28,6 +28,7 @@ cArray();
 // ******************
 // TO DO!!!!!! when you click the player guess circles before choosing a color, they disappear!!!
 // CPU CODE CHANGES BEFORE BEING REVEALED - don't do until click play again
+// look at this link for instructions button?? https://codepen.io/Saabbir/pen/LNzdGZ
 // ******************
 
 /*----- state variables -----*/
@@ -44,18 +45,18 @@ let circle1;
 let circle2;
 let circle3;
 let circle4;
-let newCrackedCount;
+// let newCrackedCount;
 
 
 /*----- cached elements  -----*/
 let turnsCount = document.getElementById('turnsCount');
 turnsCount.innerText = 0;
 
-let crackedCount = document.getElementById('codesCracked');
-crackedCount.innerText = 0;
+// let crackedCount = document.getElementById('codesCracked');
+// crackedCount.innerText = 0;
 
-let thwartedCount = document.getElementById('thwarted');
-thwartedCount.innerText = 0;
+// let thwartedCount = document.getElementById('thwarted');
+// thwartedCount.innerText = 0;
 
 let colorButtonEls = document.querySelectorAll('.color-buttons button')
 
@@ -165,19 +166,20 @@ function calculateWinner(){
   };
 
 function winnerNotice() {
-  crackedCount.innerText++; 
-  alert('winnnnn'); 
+  // crackedCount.innerText++; 
+  alert('YOU CRACKED THE CODE AND SAVED THE WORLD! CONGRATULATIONS!'); 
   cArray();
   rowArray.forEach(function(row) {row.removeAttribute('class')})
   codeReveal.style.visibility = 'visible';
-  setTimeout(function(){playAgain()},5000);
+  setTimeout(function(){playAgain()},1000);
 };
 
 function loserNotice() {
-  thwartedCount.innerText++; cArray(); count = 0; alert('sorry, you didn\'t crack it this time!');
+  // thwartedCount.innerText++; cArray(); 
+  count = 0; alert('MISSION FAILED. BACK TO SPY SCHOOL WITH YOU.');
   rowArray.forEach(function(row) {row.removeAttribute('class')})
-  codeReveal.style.visibility = 'visible';
-  setTimeout(function(){playAgain()},500);
+  setTimeout(function(){revealCode()}, 1000)
+  setTimeout(function(){playAgain()}, 2000);
 };
 
 function playAgain() {
@@ -185,9 +187,17 @@ function playAgain() {
 };
 
 function doPlayAgain() {
-
+ init();
 };
 
 function dontPlayAgain() {
   goodbyeScreen.style.display = 'flex';
 }
+
+function init() {
+  location.reload()
+};
+
+function revealCode() {
+  codeReveal.style.visibility = 'visible';
+};
