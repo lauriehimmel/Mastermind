@@ -125,7 +125,6 @@ function freeSubmit() {
 
 function submitGuess() {
   count++;
-  console.log(count);
   turnsCount.innerText = count;
   getRow = document.getElementById(`row${count}`);
   circle1 = getRow.children[0];
@@ -148,14 +147,14 @@ function calculateWinner() {
   guess3El.className = "guess";
   guess4El.className = "guess";
   if (
-    count <= 2 &&
+    count <= 5 &&
     circle1.className === cGuess1.className &&
     circle2.className === cGuess2.className &&
     circle3.className === cGuess3.className &&
     circle4.className === cGuess4.className
   ) {
     winnerNotice();
-  } else if (count >= 2) {
+  } else if (count >= 5) {
     loserNotice();
   }
 }
