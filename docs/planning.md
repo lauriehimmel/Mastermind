@@ -10,7 +10,7 @@ Invented in the 70s by Mordecai Meirowitz, Mastermind was initially based on a p
 Though Mastermind is typically a two-player game, I will be making a one-player, one-computer version, where the player must guess the computer's randomly generated code. Will you find satisfaction in beating the bot? Or will your codebreaking attempts be thwarted?
 
 ## Screenshot for Wireframes
-![Wireframe screenshot](img/wireframe3.png)
+![Wireframe screenshot](/img/wireframe3.png)
 
 ## Pseudocode
 ### Constants
