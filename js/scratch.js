@@ -6,7 +6,6 @@ console.log('howdy!');
 
 
 // ******************
-// TO DO!!!!!! when you click the player guess circles before choosing a color, they disappear!!!
 // CPU CODE CHANGES BEFORE BEING REVEALED - don't do until click play again
 // look at this link for instructions button?? https://codepen.io/Saabbir/pen/LNzdGZ
 // ******************
@@ -42,16 +41,20 @@ let circleEls = document.querySelectorAll('.player-guesses .guess');
 let submitBtnEl = document.querySelector('.submit');
 let codeReveal = document.querySelector('.cpuCode-box');
 let popupEl = document.querySelector('.hidden');
+let popupElLose = document.querySelector('.hidden-lose');
 let guess1El = (document.getElementById('guess1'));
 let guess2El = (document.getElementById('guess2')); 
 let guess3El = (document.getElementById('guess3'));
 let guess4El = (document.getElementById('guess4'));
 let yesPlayAgain = document.querySelector('.yesbutton');
+let yesPlayAgainLose = document.querySelector('.yesbutton-lose');
 let noPlayAgain = document.querySelector('.nobutton');
+let noPlayAgainLose = document.querySelector('.nobutton-lose');
 let goodbyeScreen = document.querySelector('.byehidden');
 let instrBtn = document.querySelector('.instruction-button');
 let instructionsEl = document.getElementById("hiddentext");
 let winnerMessageEl = document.getElementById('winnerhidden');
+let winLoseAlert = document.querySelector('.cpuBox-bg');
 
 
 let row1ArrayEls = document.querySelector('#row1').children;
@@ -81,9 +84,12 @@ submitBtnEl.addEventListener('click', submitGuess);
 yesPlayAgain.addEventListener('click', doPlayAgain);
 noPlayAgain.addEventListener('click', dontPlayAgain);
 instrBtn.addEventListener('click', toggleInstructions);
+yesPlayAgainLose.addEventListener('click', doPlayAgain);
+noPlayAgainLose.addEventListener('click', dontPlayAgain);
 
 /*----- functions -----*/
 turnsCount.innerText = 0;
+instructionsEl.style.display = "none";
 
 cArray();
 disableSubmit();
@@ -102,9 +108,10 @@ function cArray() {let cArray =  [(colorArray[Math.floor(Math.random() * 5)+1]),
 
 function toggleInstructions() {
   if (instructionsEl.style.display === "none") {
-    instructionsEl.style.display = "grid"
+    setTimeout(function(){instructionsEl.style.display = "grid"},450);
   } else {
-    instructionsEl.style.display = "none"
+    
+    setTimeout(function(){instructionsEl.style.display = "none"},455);
   }
 };
 
@@ -157,28 +164,31 @@ function calculateWinner(){
     guess2El.className = 'guess';
     guess3El.className = 'guess';
     guess4El.className = 'guess';
-    if (count <= 5 && circle1.className === cGuess1.className && circle2.className === cGuess2.   className && circle3.className === cGuess3.className && circle4.className === cGuess4.className) {
+    if (count <= 1 && circle1.className === cGuess1.className && circle2.className === cGuess2.   className && circle3.className === cGuess3.className && circle4.className === cGuess4.className) {
       winnerNotice();
-    } else if (count >= 5) {
+    } else if (count >= 1) {
       loserNotice();
     };
   };
 
 function winnerNotice() {
-  cArray();
-  setTimeout(function(){rowArray.forEach(function(row) {row.removeAttribute('class')})}, 500);
-  setTimeout(function(){playAgain()},500);
+  setTimeout(function(){revealCode()}, 300);
+  setTimeout(function(){playAgain()},2000);
+  setTimeout(function(){successColor()}, 800);
 };
 
 function loserNotice() { 
-  count = 0; alert('MISSION FAILED. BACK TO SPY SCHOOL WITH YOU.');
-  rowArray.forEach(function(row) {row.removeAttribute('class')})
-  setTimeout(function(){revealCode()}, 2000)
-  setTimeout(function(){playAgain()}, 2000);
+  setTimeout(function(){revealCode()}, 300);
+  setTimeout(function(){redAlert()}, 800);
+  setTimeout(function(){playAgain2()}, 3000);
 };
 
 function playAgain() {
   popupEl.style.display = 'flex';
+};
+
+function playAgain2() {
+  popupElLose.style.display = 'flex';
 };
 
 function doPlayAgain() {
@@ -196,3 +206,13 @@ function init() {
 function revealCode() {
   codeReveal.style.visibility = 'visible';
 };
+
+function redAlert() {
+  winLoseAlert.id = 'lose-code';
+  codeReveal.id = 'lose-code';
+}
+
+function successColor() {
+  winLoseAlert.id = 'win-code';
+  codeReveal.id = 'win-code';
+}
