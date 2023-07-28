@@ -69,11 +69,8 @@ instrBtn.addEventListener("click", toggleInstructions);
 yesPlayAgainLose.addEventListener("click", doPlayAgain);
 noPlayAgainLose.addEventListener("click", dontPlayAgain);
 
-turnsCount.innerText = 0;
-instructionsEl.style.display = "none";
-
 cArray();
-disableSubmit();
+setElements();
 
 function cArray() {
   let cArray = [
@@ -115,10 +112,6 @@ function setColor(circ) {
   freeSubmit();
 }
 
-function disableSubmit() {
-  submitBtnEl.disabled = true;
-}
-
 function freeSubmit() {
   if (
     guess1El.className.includes("fill") &&
@@ -155,14 +148,14 @@ function calculateWinner() {
   guess3El.className = "guess";
   guess4El.className = "guess";
   if (
-    count <= 5 &&
+    count <= 2 &&
     circle1.className === cGuess1.className &&
     circle2.className === cGuess2.className &&
     circle3.className === cGuess3.className &&
     circle4.className === cGuess4.className
   ) {
     winnerNotice();
-  } else if (count >= 5) {
+  } else if (count >= 2) {
     loserNotice();
   }
 }
@@ -224,3 +217,11 @@ function successColor() {
   winLoseAlert.id = "win-code";
   codeReveal.id = "win-code";
 }
+
+function setElements() {
+  turnsCount.innerText = 0;
+  instructionsEl.style.display = "none";
+  submitBtnEl.disabled = true;
+}
+
+

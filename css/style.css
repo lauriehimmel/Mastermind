@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -9,6 +13,8 @@ body {
   align-items: center;
   background-image: linear-gradient(to bottom, #858484 0%, black 100%);
   height: 100%;
+  width: 100%;
+  background-size: stretch;
 }
 
 .header {
@@ -183,47 +189,38 @@ main {
   font-size: 1.5rem;
 }
 
+.fill-red, .fill-orange, .fill-yellow, .fill-green, .fill-blue {
+  border: none;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
 .fill-red {
   background-color: red;
   box-shadow: 0px -1px 2px 0 rgb(93, 0, 0) inset,
     0px 1px 1px 1px rgb(75, 12, 12);
-  border: none;
-  margin-right: 10px;
-  margin-top: 10px;
 }
 
 .fill-orange {
   background-color: rgb(255, 132, 0);
   box-shadow: 0px -1px 2px 0 rgb(83, 54, 0) inset,
     0px 1px 1px 1px rgb(94, 64, 6);
-  border: none;
-  margin-right: 10px;
-  margin-top: 10px;
 }
 
 .fill-yellow {
   background-color: yellow;
   box-shadow: 0px -1px 2px 0 rgb(40, 40, 11) inset,
     0px 1px 1px 1px rgb(82, 82, 0);
-  border: none;
-  margin-right: 10px;
-  margin-top: 10px;
 }
 
 .fill-green {
   background-color: rgb(5, 221, 5);
   box-shadow: 0px -1px 2px 0 rgb(0, 94, 0) inset, 0px 1px 1px 1px rgb(0, 65, 0);
-  border: none;
-  margin-right: 10px;
-  margin-top: 10px;
 }
 
 .fill-blue {
   background-color: rgb(19, 92, 251);
   box-shadow: 0px -1px 2px 0 rgb(0, 0, 100) inset, 0px 1px 1px 1px rgb(0, 0, 90);
-  border: none;
-  margin-right: 10px;
-  margin-top: 10px;
 }
 
 .fill-purple {
@@ -603,7 +600,6 @@ a {
   line-height: 50px;
   text-align: center;
   position: relative;
-  margin-top: 40px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);

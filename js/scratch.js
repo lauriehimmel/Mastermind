@@ -42,10 +42,10 @@ let submitBtnEl = document.querySelector('.submit');
 let codeReveal = document.querySelector('.cpuCode-box');
 let popupEl = document.querySelector('.hidden');
 let popupElLose = document.querySelector('.hidden-lose');
-let guess1El = (document.getElementById('guess1'));
-let guess2El = (document.getElementById('guess2')); 
-let guess3El = (document.getElementById('guess3'));
-let guess4El = (document.getElementById('guess4'));
+// let guess1El = (document.getElementById('guess1'));
+// let guess2El = (document.getElementById('guess2')); 
+// let guess3El = (document.getElementById('guess3'));
+// let guess4El = (document.getElementById('guess4'));
 let yesPlayAgain = document.querySelector('.yesbutton');
 let yesPlayAgainLose = document.querySelector('.yesbutton-lose');
 let noPlayAgain = document.querySelector('.nobutton');
@@ -216,3 +216,27 @@ function successColor() {
   winLoseAlert.id = 'win-code';
   codeReveal.id = 'win-code';
 }
+
+
+
+//playing around with guessEls
+let guess1El;
+let guess2El;
+let guess3El;
+let guess4El;
+let numArray = [1,2,3,4];
+
+// for(let i=0; i<numArray.length;i++) {console.log(guess)}
+
+function setGuessEl () {
+  for(let i=0; i<numArray.length; i++) {
+    `guess${i}El` = document.getElementById(`guess${i}`); console.log(`guess${i}El`);
+    console.log('first', document.getElementById(`guess${numArray[i]}`))}}
+setGuessEl();
+// guess1El = document.getElementById("guess1");
+// console.log('second', guess1El);
+
+// console.log(guess1El);
+// let guess2El = document.getElementById("guess2");
+// let guess3El = document.getElementById("guess3");
+// let guess4El = document.getElementById("guess4");

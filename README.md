@@ -1,4 +1,3 @@
-<!-- main header for entire game -->
 # MasterMind 
 A codebreaking game for two! As a frequently played game in my childhood, Mastermind was the obvious choice for me to build with my newly developed and continutally evolving JS skills.  
   
